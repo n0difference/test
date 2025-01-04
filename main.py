@@ -1,5 +1,5 @@
-def data_input(str):
-    print(str)
+def data_input(title):
+    print(title)
     num1 = float(input("введите 1 число: "))
     num2 = float(input("введите 2 число: "))
     return num1, num2
