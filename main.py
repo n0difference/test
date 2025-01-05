@@ -1,15 +1,24 @@
 def data_input():
-    age = int(input("введите возаст: "))
-    citizenship = int(input("введите \"1\", если вы являетесь гражданином и \"0\", если нет: "))
-    disqualification = int(input("введите \"1\", если вам запрещено участвовать в выборах и \"0\", если нет: "))
-    return age, citizenship, disqualification
+    try:
+        num = int(input("введите число от 1 до 5: "))
+        return num
+    except ValueError:
+        print("необходимо ввести 1 символ, из списка: \n\"1\", \"2\", \"3\", \"4\", \"5\"")
 
 
-def check_permition(info_tuple):
-    if (info_tuple[0] >= 18 and info_tuple[1] and not info_tuple[2]):
-        print("вы можете голосовать")
+def num_translate(num):
+    if num == 1:
+        print("one")
+    elif num == 2:
+        print("two")
+    elif num == 3:
+        print("three")
+    elif num == 4:
+        print("four")
+    elif num == 5:
+        print("five")
     else:
-        print("вы не можете голосовать")
+        print("error: введено неправильное значение")
 
 
-check_permition(data_input())
+num_translate(data_input())
