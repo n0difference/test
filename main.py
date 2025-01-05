@@ -5,6 +5,7 @@ def data_input():
         return num
     except ValueError:
         print("error: необходимо ввести целое положительное число")
+        return 0
 
 
 def countdown(num):
