@@ -1,9 +1,9 @@
 def data_input():
     try:
         num = int(input("введите целое положительное число: "))
-        assert num > 0
+        assert num > 0, "число должно быть больше 0"
         return num
-    except:
+    except ValueError:
         print("error: необходимо ввести целое положительное число")
 
 
