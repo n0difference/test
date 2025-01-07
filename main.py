@@ -1,24 +1,12 @@
-def data_input():
-    try:
-        num = int(input("введите число от 1 до 5: "))
-        return num
-    except ValueError:
-        print("необходимо ввести 1 символ, из списка: \n\"1\", \"2\", \"3\", \"4\", \"5\"")
+list1 = [1, 2, 3, 4, 5, 6]
+list2 = [1, 2, 3]
+min_len = len(list1) if len(list1) < len(list2) else len(list2)
+max_list = list1 if len(list1) > len(list2) else list2
+newlist = [0] * min_len
 
+for i in range(min_len):
+    newlist[i] = list1[i] + list2[i]
 
-def num_translate(num):
-    if num == 1:
-        print("one")
-    elif num == 2:
-        print("two")
-    elif num == 3:
-        print("three")
-    elif num == 4:
-        print("four")
-    elif num == 5:
-        print("five")
-    else:
-        print("error: введено неправильное значение")
+newlist.extend(max_list[-(len(max_list) - min_len):])
 
-
-num_translate(data_input())
+print(newlist)
