@@ -1,17 +1,9 @@
-def data_input():
-    try:
-        num = int(input("введите целое положительное число: "))
-        assert num > 0, "число должно быть больше 0"
-        return num
-    except ValueError:
-        print("error: необходимо ввести целое положительное число")
-        return 0
+real_password = "qwerty123"
+enterned_password = ""
 
-
-def countdown(num):
-    while num >= 0:
-        print(num)
-        num -= 1
-
-
-countdown(data_input())
+while real_password != enterned_password:
+    enterned_password = input("введите пароль: ")
+    if enterned_password == real_password:
+        print("пароль верный")
+    else:
+        print("пароль не верный")
