@@ -1,12 +1,20 @@
-list1 = [1, 2, 3, 4, 5, 6]
-list2 = [1, 2, 3]
-min_len = len(list1) if len(list1) < len(list2) else len(list2)
-max_list = list1 if len(list1) > len(list2) else list2
-newlist = [0] * min_len
+def book_list_view(library):
+    if library.keys():
+        print("В библиотеке есть следующие книги:")
+        for i in library.keys():
+            print(i)
+    else:
+        print("В библиотеке нет книг")
 
-for i in range(min_len):
-    newlist[i] = list1[i] + list2[i]
 
-newlist.extend(max_list[-(len(max_list) - min_len):])
+library = {"Язык программирования С": {"Автор": "Брайн К., Деннис Р.",
+                                       "Год выпуска": 2009,
+                                       "Наличие в библиотеке": True},
+           "Внутреннее устройство Microsoft Windows": {"Автор": "Руссинович М., Соломон Д., Ионеску А.",
+                                                       "Год выпуска": 2014,
+                                                       "Наличие в библиотеке": True},
+           "Reverse Engineering для начинающих": {"Автор": "Юричев Д.",
+                                                  "Год выпуска": 2013,
+                                                  "Наличие в библиотеке": False}}
 
-print(newlist)
+book_list_view(library)
