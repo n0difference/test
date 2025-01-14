@@ -24,6 +24,15 @@ def add_book(title, author, year):
             print(f"\nкнига успешно обновлена", end="\n\n")
 
 
+def remove_book(title):
+    global library
+    if title in library:
+        del library[title]
+        print(f"\nКнига \"{title}\" была удалена", end="\n\n")
+    else:
+        print(f"\nКнига \"{title}\" не найдена в библиотеке", end="\n\n")
+
+
 library = {
     "Язык программирования С": {
         "Автор": "Брайн К., Деннис Р.",
@@ -49,6 +58,6 @@ add_book("Компьютерные вирусы изнутри и снаружи
 
 book_list_view(library)
 
-add_book("Компьютерные вирусы изнутри и снаружи", "Крис Касперски", 2002)
+remove_book("Компьютерные вирусы изнутри и снаружи")
 
 book_list_view(library)
