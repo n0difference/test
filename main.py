@@ -33,6 +33,24 @@ def remove_book(title):
         print(f"\nКнига \"{title}\" не найдена в библиотеке", end="\n\n")
 
 
+def issue_book(title):
+    global library
+    if library[title["Наличие в библиотеке"]]:
+        library[title["Наличие в библиотеке"]] = False
+        print(f"Вы взяли \"{title}\"")
+    else:
+        print(f"Кто-то уже взял \"{title}\"")
+
+
+def return_book(title):
+    global library
+    if not library[title["Наличие в библиотеке"]]:
+        library[title["Наличие в библиотеке"]] = True
+        print(f"Вы ввернули \"{title}\"")
+    else:
+        print(f"Вы уже вернули \"{title}\"")
+
+
 library = {
     "Язык программирования С": {
         "Автор": "Брайн К., Деннис Р.",
@@ -52,12 +70,8 @@ library = {
 }
 
 
-book_list_view(library)
+issue_book("Язык программирования С")
 
-add_book("Компьютерные вирусы изнутри и снаружи", "Крис Касперски", 2006)
+issue_book("Reverse Engineering для начинающих")
 
-book_list_view(library)
-
-remove_book("Компьютерные вирусы изнутри и снаружи")
-
-book_list_view(library)
+return_book("Язык программирования С")
